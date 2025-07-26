@@ -43,6 +43,12 @@ h1, h2, h3, h4, h5, h6 {
   color: #A06056;
 }
 
+h2, h3, h4, h5, h6 {
+  font-family: 'Varta', serif;
+  font-weight: 700;
+  color: #A06056;
+}
+
 p {
   font-family: 'Open Sans', sans-serif;
   color: #4d4d4d;

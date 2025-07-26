@@ -12,9 +12,11 @@ const ChatButton: React.FC<ChatButtonProps> = ({navigateTo}) => {
         navigate(navigateTo);
     }
 
-    return (<div onClick={handleClick}>
-        <ChatSVG/>
-    </div>);
+    return (
+        <div onClick={handleClick}>
+            <ChatSVG/>
+        </div>
+    );
 }
 
 export default ChatButton;

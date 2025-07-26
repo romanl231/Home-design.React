@@ -5,7 +5,7 @@ interface HandleImageProps {
 
 const HandleImage: React.FC<HandleImageProps> = ({imageDir, imgDescription}) => {
     return (
-        <img src={imageDir} alt={imgDescription}/>
+        <img className="w-full h-full object-cover" src={imageDir} alt={imgDescription}/>
     );
 }
 

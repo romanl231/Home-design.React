@@ -1,10 +1,8 @@
-import Logo from "../shared/components/Logo"
+import IntroSection from "components/Intro/IntroSection";
 
 const Homepage = () => {
     return (
-        <div>
-            SIGMA
-        </div>
+        <IntroSection/>
     );
 };
 
