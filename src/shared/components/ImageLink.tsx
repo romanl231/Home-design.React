@@ -1,11 +1,11 @@
 import { useNavigate } from "react-router-dom";
 
-interface LinkProps {
-    linkText: string;
+interface ImageLinkProps {
+    icon: () => JSX.Element;
     navigateTo: string;
 }
 
-const Link: React.FC<LinkProps> = ({linkText, navigateTo}) => {
+const ImageLink: React.FC<ImageLinkProps> = ({icon, navigateTo}) => {
     const navigate = useNavigate();
 
     const handleClick = () => {
@@ -13,10 +13,12 @@ const Link: React.FC<LinkProps> = ({linkText, navigateTo}) => {
     }
 
     return(
-     <div className="text-[18px]" 
-     onClick={handleClick}>
-        {linkText} </div>   
+        <div 
+        className="text-[18px]" 
+        onClick={handleClick}>
+            {icon()} 
+        </div>   
     );
 };
 
-export default Link;
+export default ImageLink;
