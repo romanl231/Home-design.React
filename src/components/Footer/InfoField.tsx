@@ -1,6 +1,3 @@
-import ImageLink from "shared/components/ImageLink";
-
-import Link from "../../shared/components/Link";
 import { NetworkRefs } from "./NetworkRefs";
 import { CopyrightInfo } from "./CopyrightInfo";
 

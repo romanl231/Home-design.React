@@ -86,6 +86,21 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
+/* === FOOTER === */
+footer h1 {
+  font-family: 'Merriweather', serif;
+  font-weight: 700;
+  font-size: 34px;
+  color: #534B42;
+}
+
+footer h2 {
+  font-family: 'Varta', serif;
+  font-weight: 500;
+  font-size: 30px;
+  color: #534B42;
+}
+
 /* === IMAGES === */
 img {
   display: block;
