@@ -5,11 +5,12 @@ import ArrowActionLink from "shared/components/ArrowActionLink";
 
 
 const slides = [
-                {imgRoute: roomImg1, title:"myTitle1", description:"littleDescrip10"},
-                {imgRoute: roomImg1, title:"myTitle2", description:"littleDescrip9"},
-                {imgRoute: roomImg1, title:"myTitle3", description:"littleDescrip8"},
-                {imgRoute: roomImg1, title:"myTitle4", description:"littleDescrip7"},
-                {imgRoute: roomImg1, title:"myTitle5", description:"littleDescrip6"},
+                {imgRoute: roomImg1, title:"Title1", description:"Description1"},
+                {imgRoute: roomImg1, title:"Title2", description:"Description2"},
+                {imgRoute: roomImg1, title:"Title3", description:"Description3"},
+                {imgRoute: roomImg1, title:"Title4", description:"Description4"},
+                {imgRoute: roomImg1, title:"Title5", description:"Description5"},
+                {imgRoute: roomImg1, title:"Title6", description:"Description6"},
             ];
 
 const FindYourRoom: React.FC = () => {
@@ -38,12 +39,8 @@ const FindYourRoom: React.FC = () => {
                         <Scroller currentIndex={currentIndex} slides={slides} />
                     </div>
 
-                    {/* COUNTER + BUTTON (разом, по центру) */}
+                    {/* COUNTER + BUTTON */}
                     <div className="flex items-center gap-4 text-sm">
-                        <p>
-                            {`${(currentIndex % slides.length) + 1}`.padStart(2, "0")} /{" "}
-                            {`${slides.length}`.padStart(2, "0")}
-                        </p>
                         <ArrowActionLink handleClick={handleNext} linkText="Next" />
                     </div>
                 </div> 
