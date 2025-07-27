@@ -12,12 +12,10 @@ const Navigation: React.FC = () => {
     };
 
     return (
-        <div style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(6, 1fr)",
-            gap: "2rem",
-            padding: "3rem",
-        }}>
+        <div className="grid 
+                grid-cols-1 sm:grid-cols-2 
+                lg:grid-cols-3 xl:grid-cols-6 
+                gap-8 p-6">
             <div>
                 <Logo />
             </div>

@@ -3,9 +3,10 @@ import ChatSVG from "./ChatIcon";
 
 interface ChatButtonProps {
     navigateTo: string;
+    className: string;
 }
 
-const ChatButton: React.FC<ChatButtonProps> = ({navigateTo}) => {
+const ChatButton: React.FC<ChatButtonProps> = ({navigateTo, className}) => {
     const navigate = useNavigate();
 
     const handleClick = () => {
@@ -13,7 +14,7 @@ const ChatButton: React.FC<ChatButtonProps> = ({navigateTo}) => {
     }
 
     return (
-        <div onClick={handleClick}>
+        <div onClick={handleClick} className={className}>
             <ChatSVG/>
         </div>
     );
