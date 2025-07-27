@@ -4,10 +4,12 @@ import Navigation from "./Navigation";
 const Footer: React.FC = () => {
     return (
         <section>
-            <footer className="w-full z-50">
-                    <Navigation/>
-                    <InfoField/>
-            </footer>
+            <div className="w-full max-w-[1440px] mx-auto flex items-center justify-between px-10 py-6">
+                <footer className="w-full z-50">
+                        <Navigation/>
+                        <InfoField/>
+                </footer>
+            </div>
         </section>
     );
 };

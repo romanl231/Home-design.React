@@ -37,21 +37,27 @@ body {
 }
 
 /* === TYPOGRAPHY === */
-h1, h2, h3, h4, h5, h6 {
+h1 {
   font-family: 'Merriweather', serif;
   font-weight: 700;
   color: #A06056;
 }
 
-h2, h3, h4, h5, h6 {
+h2, h3 {
+  font-family: 'Merriweather', serif;
+  font-weight: 500;
+  color: #706458;
+}
+
+h4, h5, h6 {
   font-family: 'Varta', serif;
   font-weight: 700;
   color: #A06056;
 }
 
 p {
-  font-family: 'Open Sans', sans-serif;
-  color: #4d4d4d;
+  font-family: 'Varta', sans-serif;
+  color: #706458;
 }
 
 h1 {

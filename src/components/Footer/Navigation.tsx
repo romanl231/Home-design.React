@@ -12,7 +12,7 @@ const Navigation: React.FC = () => {
     };
 
     return (
-        <footer style={{
+        <div style={{
             display: "grid",
             gridTemplateColumns: "repeat(6, 1fr)",
             gap: "2rem",
@@ -76,7 +76,7 @@ const Navigation: React.FC = () => {
                     />
                 }
             />
-        </footer>
+        </div>
     );
 };
 
