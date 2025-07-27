@@ -18,7 +18,7 @@ const IntroSection: React.FC = () => {
 
   return (
   <section className="min-h-screen flex items-center justify-center px-4">
-    <div className="flex flex-col items-center text-center gap-6 max-w-4xl w-full">
+    <div className=" flex flex-col items-center text-center gap-6 max-w-4xl w-full">
       <div>
         <h5>HOME DESIGN</h5>
       </div>
