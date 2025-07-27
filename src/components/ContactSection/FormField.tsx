@@ -5,7 +5,7 @@ interface FormFieldProps {
 
 const FormField: React.FC<FormFieldProps> = ({ label, children }) => (
   <div className="flex flex-col gap-2">
-    <label className="text-sm text-gray-700">{label}</label>
+    <label className="text-sm">{label}</label>
     {children}
   </div>
 );

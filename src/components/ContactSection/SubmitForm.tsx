@@ -2,64 +2,65 @@ import { useState } from "react";
 import FormField from "./FormField";
 import TemplateSelect from "./TemplateSelect";
 import { ContactSubmitionService } from "api/contact";
+import { FormikProvider, useFormik } from "formik";
+import { validationSchema } from "utils/validationSchema";
+import FormikTextInput from "../../shared/components/FormikTextInput";
+import FormikTextarea from "shared/components/FormikTextarea";
+import FormikSubmitButton from "shared/components/FormikSubmitButton";
 
 const SubmitForm = () => {
-  const [email, setEmail] = useState("");
-  const [city, setCity] = useState("");
-  const [template, setTemplate] = useState("Hitech kitchen");
-  const [message, setMessage] = useState("");
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    ContactSubmitionService.submit({email, city, template, message});
-    alert("Submitted successfully");
-  };
+  const formik = useFormik({
+    initialValues: {
+      email: "",
+      city: "",
+      template: "Hitech kitchen",
+      message: "",
+    },
+    validationSchema: validationSchema,
+    onSubmit: (values) => {
+      ContactSubmitionService.submit(values);
+      alert("Submitted successfully");
+    },
+  });
 
   return (
-    <form
-      onSubmit={handleSubmit}
-      className="bg-white p-10 flex flex-col gap-6 w-full max-w-lg"
-    >
-      <FormField label="Email address">
-        <input
-          type="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          className="p-3 bg-[#fdf9f6] border border-gray-200 rounded-sm w-full"
-          placeholder="email@address.com"
-        />
-      </FormField>
-
-      <FormField label="City where you currently living">
-        <input
-          type="text"
-          value={city}
-          onChange={(e) => setCity(e.target.value)}
-          className="p-3 bg-[#fdf9f6] border border-gray-200 rounded-sm w-full"
-          placeholder="Odesa region, Ismail"
-        />
-      </FormField>
-
-      <FormField label="Choose template">
-        <TemplateSelect value={template} onChange={(e) => setTemplate(e.target.value)} />
-      </FormField>
-
-      <FormField label="Any additional information">
-        <textarea
-          value={message}
-          onChange={(e) => setMessage(e.target.value)}
-          className="p-3 bg-[#fdf9f6] border border-gray-200 rounded-sm w-full h-32 resize-none"
-          placeholder="Write right here"
-        />
-      </FormField>
-
-      <button
-        type="submit"
-        className="subscribe-button"
+    <FormikProvider value={formik}>
+      <form
+        onSubmit={formik.handleSubmit}
+        className="bg-white p-10 flex flex-col gap-6 w-full max-w-lg"
       >
-        Send
-      </button>
-    </form>
+        <FormikTextInput
+            name="email"
+            placeholder="email@address.com"
+            label= "Email address"
+        />
+
+        <FormikTextInput
+            name="city"
+            placeholder="Odesa region, Ismail"
+            label= "City where you currently living"
+        />
+
+        <FormField label="Choose template">
+          <TemplateSelect
+            value={formik.values.template}
+            onChange={(val) => formik.setFieldValue("template", val)}
+            onBlur={() => formik.setFieldTouched("template", true)}
+            error={formik.touched.template && formik.errors.template}
+          />
+          {formik.touched.template && formik.errors.template && (
+            <div className="text-red-500 text-sm mt-1">{formik.errors.template}</div>
+          )}
+        </FormField>
+
+        <FormikTextarea
+          name="message"
+          label="Any additional information"
+          placeholder="Write right here"/>
+
+        <FormikSubmitButton>Send</FormikSubmitButton>
+      </form>
+    </FormikProvider>
   );
 };
 
